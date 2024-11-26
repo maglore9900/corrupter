@@ -41,15 +41,21 @@ def main():
 	# Paths for input and output files
 	input_file_path = os.path.join(script_dir, f'{file}.png')
 	output_file_path = os.path.join(destination, f'corrupt_{file}.png')
-	mag_value = str(random.randint(1,6) )
-	boffset_value = str(random.randint(5,10))
+	mag_value = str(random.randint(1,5) )
+	boffset_value = str(random.randint(6,10))
+	lag_value = str(random.uniform(0.005, 0.01))
+	meanabbr_value = meanabbrr_value = str(random.randint(1,7))
+	stdabber_value = str(random.uniform(1, 10))
+
+
 	print(f"mag value {mag_value}")
 	print(f"boffset value {boffset_value}")
-	lag_value = str(random.uniform(0.005, 0.01))
 	print(f"lag value {lag_value}")
+	print(f"meanabber value {meanabbr_value}")
+	print(f"stabber value {stdabber_value}")
 	try:
 		# Pass each component of the command as a separate argument
-		result = subprocess.run([corrupter_path, '-lag', lag_value, '-mag', mag_value, '-boffset', boffset_value,  input_file_path, output_file_path])
+		result = subprocess.run([corrupter_path, '-lag', lag_value, '-meanabber', meanabbr_value, '-mag', mag_value, '-stdabber', stdabber_value,  '-boffset', boffset_value,  input_file_path, output_file_path])
 		
 		if result.returncode == 0:
 			print("success")

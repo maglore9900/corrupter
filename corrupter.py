@@ -100,7 +100,7 @@ def main():
 		print(f"bheight value {bheight_value}")
 		print(f"add value {add_value}")
 		print(f"stdoffset {stdoffset}")
-		print("------")
+		
 		try:
 			#! Execute the corrupter file with the following variables
 			result = subprocess.run([corrupter_path, '-lag', lag_value, '-meanabber', meanabber_value, '-mag', mag_value, '-stdabber', stdabber_value, '-bheight', bheight_value, '-add', add_value, '-boffset', boffset_value, '-stdoffset', stdoffset,  input_file_path, output_file_path])
@@ -113,6 +113,7 @@ def main():
 		except Exception as e:
 			print("An error occurred:", e) 
 		count += 1
+		print("------")
 
 if __name__ == '__main__':
 	main()

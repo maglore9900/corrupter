@@ -44,6 +44,7 @@ def main():
 	parser = argparse.ArgumentParser(description='Convert an image to PNG.')
 	parser.add_argument('-f', '--file', required=True, help='The image file to process')
 	parser.add_argument('-r', '--repeat', required=False, help='Repeat X times')
+	parser.add_argument('-v', '--verbose', required=False, help='Show image modification values')
 	parser.add_argument('-mag', '--mag_value', required=False, help='Dissolve blur strength')
 	parser.add_argument('-boff', '--boffset_value', required=False, help='Distorted block offset strength')
 	parser.add_argument('-lag', '--lag_value', required=False, help='Per-channel scanline lag strength')
@@ -69,9 +70,10 @@ def main():
 	#! Path to the corrupter executable
 	corrupter_path = os.path.join(script_dir, 'corrupter.exe')
 	input_file_path = os.path.join(script_dir, f'{file}.png')
-	output_file_path = os.path.join(destination, f'corrupt_{file.split('\\')[-1]}_{count}.png')
+	
  
-	while count < repeat:		
+	while count < repeat:	
+		output_file_path = os.path.join(destination, f'corrupt_{file.split('\\')[-1]}_{count}.png')
 		mag_value = args.mag_value if args.mag_value else str(random.uniform(1,5))
 		boffset_value = args.boffset_value if args.boffset_value else str(random.randint(8,15))
 		lag_value = args.lag_value if args.lag_value else str(random.uniform(0.05, 0.02))
@@ -91,15 +93,16 @@ def main():
 		else:
 			add_value = '10'
 
-		print(f"Iteration: {count}")
-		print(f"mag value {mag_value}")
-		print(f"boffset value {boffset_value}")
-		print(f"lag value {lag_value}")
-		print(f"meanabber value {meanabber_value}")
-		print(f"stabber value {stdabber_value}")
-		print(f"bheight value {bheight_value}")
-		print(f"add value {add_value}")
-		print(f"stdoffset {stdoffset}")
+		if args.verbose:
+			print(f"Iteration: {count}")
+			print(f"mag value {mag_value}")
+			print(f"boffset value {boffset_value}")
+			print(f"lag value {lag_value}")
+			print(f"meanabber value {meanabber_value}")
+			print(f"stabber value {stdabber_value}")
+			print(f"bheight value {bheight_value}")
+			print(f"add value {add_value}")
+			print(f"stdoffset {stdoffset}")
 		
 		try:
 			#! Execute the corrupter file with the following variables

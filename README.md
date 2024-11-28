@@ -12,7 +12,7 @@ Building this is easy, so if you dont care about the python wrapper, go check ou
 Original
 
 
-<img src="input/eye2.png" alt="Description" width="500" height="300">
+<img src="input/eye2.png" height="300">
 
 
 ![](input/eye2.png)

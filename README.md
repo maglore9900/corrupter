@@ -11,6 +11,10 @@ Building this is easy, so if you dont care about the python wrapper, go check ou
 
 Original
 
+
+<img src="input/eye2.png" alt="Description" width="500" height="300">
+
+
 ![](input/eye2.png)
 
 Glitched/Corrupted
@@ -22,3 +26,11 @@ Before
 
 Glitched/Corrupted
 ![](output/glitch_mars.png)
+
+Before
+
+![](input/galactic_eye.png)
+
+Corrupted/Glitched
+
+![](output/corrupt_galactic_eye_2.png)

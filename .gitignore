@@ -159,8 +159,15 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+*.png
+*.jpg
 test/
 shots/
+input/
+output/
+!*mars.png 
+!*eye.png 
+
 
 
 

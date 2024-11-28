@@ -14,19 +14,25 @@ For the wrapper I made it a bit easier to control, and much easier to bulk edit 
 ### Example Images
 
 Original
+
 <img src="input/eye2.png" width="500">
 
 Glitched/Corrupted
+
 <img src="output/corrupt_eye2.png" width="500">
 
 Before
+
 <img src="input/mars.png" width="500">
 
 Glitched/Corrupted
+
 <img src="output/glitch_mars.png" width="500">
 
 Before
+
 <img src="input/galactic_eye.png" width="500">
 
 Corrupted/Glitched
+
 <img src="output/corrupt_galactic_eye_2.png" width="500">

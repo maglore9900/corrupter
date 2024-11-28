@@ -61,7 +61,6 @@ def main():
 	print(f'The provided file is: {file_path}')
 	
 	file, file_type = file_path.split(".")
-	print(f"file {file}")
 	#! file must be png, test and convert if necessary
 	if file_type.lower() != "png": convert_to_png(file_path)    
 	script_dir = os.path.dirname(os.path.abspath(__file__))

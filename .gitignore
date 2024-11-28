@@ -163,8 +163,7 @@ cython_debug/
 *.jpg
 test/
 shots/
-input/
-output/
+
 !*mars.png 
 !*eye.png 
 

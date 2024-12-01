@@ -44,7 +44,7 @@ def main():
 	parser = argparse.ArgumentParser(description='Convert an image to PNG.')
 	parser.add_argument('-f', '--file', required=True, help='The image file to process')
 	parser.add_argument('-r', '--repeat', required=False, help='Repeat X times')
-	parser.add_argument('-v', '--verbose', required=False, help='Show image modification values')
+	parser.add_argument('-v', '--verbose', required=False,  action='store_true', help='Show image modification values')
 	parser.add_argument('-mag', '--mag_value', required=False, help='Dissolve blur strength')
 	parser.add_argument('-boff', '--boffset_value', required=False, help='Distorted block offset strength')
 	parser.add_argument('-lag', '--lag_value', required=False, help='Per-channel scanline lag strength')
@@ -69,7 +69,7 @@ def main():
 	#! Path to the corrupter executable
 	corrupter_path = os.path.join(script_dir, 'corrupter.exe')
 	input_file_path = os.path.join(script_dir, f'{file}.png')
-	
+
  
 	while count < repeat:	
 		output_file_path = os.path.join(destination, f'corrupt_{file.split('\\')[-1]}_{count}.png')
